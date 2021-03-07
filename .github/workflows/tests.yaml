@@ -1,0 +1,107 @@
+name: tests
+on: [push, pull_request]
+jobs:
+  es5-initial:
+    name: 00-es5-initial
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source files
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: NPM Install
+        run: cd 00-es5-initial; npm install
+      - name: Unit Test
+        run: cd 00-es5-initial; npm run test
+
+  es5-added-lint:
+    name: 01-es5-added-lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source files
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: NPM Install
+        run: cd 01-es5-added-lint; npm install
+      - name: Unit Test
+        run: cd 01-es5-added-lint; npm run test
+
+  es6-initial:
+    name: 10-es6-initial
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source files
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: NPM Install
+        run: cd 10-es6-initial; npm install
+      - name: Unit Test
+        run: cd 10-es6-initial; npm run test
+
+  es6-added-lint:
+    name: 11-es6-added-lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source files
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: NPM Install
+        run: cd 11-es6-added-lint; npm install
+      - name: Unit Test
+        run: cd 11-es6-added-lint; npm run test
+
+  ts-initial:
+    name: 20-ts-initial
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source files
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: NPM Install
+        run: cd 20-ts-initial; npm install
+      - name: Unit Test
+        run: cd 20-ts-initial; npm run test
+
+  ts-added-lint:
+    name: 21-ts-added-lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source files
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: NPM Install
+        run: cd 21-ts-added-lint; npm install
+      - name: Unit Test
+        run: cd 21-ts-added-lint; npm run test
+
+  ts-usecase-common:
+    name: 22-ts-usecase-common
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source files
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - name: NPM Install
+        run: cd 22-ts-usecase-common; npm install
+      - name: Unit Test
+        run: cd 22-ts-usecase-common; npm run test
