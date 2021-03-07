@@ -13,6 +13,7 @@ forbid-pending: false
 full-trace: false
 growl: false
 inline-diffs: false
+parallel: true
 recursive: false
 reporter: spec
 retries: 1
