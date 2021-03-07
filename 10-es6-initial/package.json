@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "coverage": "nyc npm run test",
     "test": "mocha"
   },
   "devDependencies": {
@@ -10,6 +11,8 @@
     "@babel/preset-env": "^7.13.9",
     "@babel/register": "^7.13.8",
     "chai": "^4.3.3",
-    "mocha": "^8.3.1"
+    "mocha": "^8.3.1",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.4"
   }
 }
