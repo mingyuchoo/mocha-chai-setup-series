@@ -1,5 +1,7 @@
-import { expect } from 'chai';
+import chai, { expect } from 'chai';
 import sinon from 'sinon';
+import sinonChai from 'sinon-chai';
+chai.use(sinonChai);
 
 describe('sinon.fake()', () => {
   describe('Creating a fake', () => {
@@ -11,10 +13,14 @@ describe('sinon.fake()', () => {
       const fake = sinon.fake();
 
       fake();
-      // undefined
+      // > undefined
 
-      expect(fake.callCount).to.be.equal(1);
-      // 1
+      expect(fake.calledOnce).to.be.true; // chai style
+      expect(fake).to.have.been.calledOnce; // sinon-chai style
+
+      expect(fake.callCount).to.be.equal(1); // chai style
+      expect(fake).to.have.callCount(1); // sinon-chai style
+      // > 1
     });
   });
   describe('Fake with behavior', () => {
@@ -25,15 +31,17 @@ describe('sinon.fake()', () => {
       const fake = sinon.fake.returns('foo');
 
       expect(fake()).to.be.equal('foo');
-      // faoo
-      expect(fake.callCount).to.be.equal(1);
+      // > foo
+      expect(fake.calledOnce).to.be.true; // chai style
+      expect(fake).to.have.been.calledOnce; // sinon-chai style
     });
 
     it('creates a fake that throws an Error', () => {
       const fake = sinon.fake.throws(new Error('not apple pie'));
 
       expect(fake).to.throw(Error);
-      expect(fake.callCount).to.be.equal(1);
+      expect(fake.callCount).to.be.equal(1); // chai style
+      expect(fake).to.have.callCount(1); // sinon-chai style
     });
   });
 
@@ -54,10 +62,10 @@ describe('sinon.fake()', () => {
       fake(1, 2, 3, callback2);
 
       expect(fake.getCall(1).callback).to.be.equal(callback2);
-      // true
+      // > true
 
       expect(fake.lastCall.callback).to.be.equal(callback2);
-      // true
+      // > true
     });
     it('.firstArg, .lastArg', () => {
       const fake = sinon.fake();

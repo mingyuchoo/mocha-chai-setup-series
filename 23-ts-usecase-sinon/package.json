@@ -12,25 +12,32 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/bluebird": "^3.5.33",
     "@types/chai": "^4.2.15",
+    "@types/jquery": "^3.5.5",
     "@types/mocha": "^8.2.1",
     "@types/node": "^14.14.33",
-    "@types/sinon": "^9.0.11",
+    "@types/sinon-chai": "^3.2.5",
     "@typescript-eslint/eslint-plugin": "^4.17.0",
     "@typescript-eslint/parser": "^4.17.0",
+    "bluebird": "^3.7.2",
     "chai": "^4.3.3",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^3.3.1",
+    "jquery": "^3.6.0",
     "mocha": "^8.3.1",
     "nyc": "^15.1.0",
     "prettier": "^2.2.1",
     "sinon": "^9.2.4",
+    "sinon-chai": "^3.5.0",
     "ts-jest": "^26.5.3",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.2"
   },
   "dependencies": {
-    "newman": "^5.2.2"
+    "@types/pubsub-js": "^1.8.2",
+    "newman": "^5.2.2",
+    "pubsub-js": "^1.9.3"
   }
 }
