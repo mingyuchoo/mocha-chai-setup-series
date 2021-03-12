@@ -37,7 +37,9 @@
   },
   "dependencies": {
     "@types/pubsub-js": "^1.8.2",
+    "@types/request": "^2.48.5",
     "newman": "^5.2.2",
-    "pubsub-js": "^1.9.3"
+    "pubsub-js": "^1.9.3",
+    "request": "^2.88.2"
   }
 }

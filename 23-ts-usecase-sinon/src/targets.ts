@@ -1,3 +1,5 @@
+import request from 'request';
+
 export function greet(name: string) {
   return `Hello, ${name}!`;
 }
@@ -18,4 +20,16 @@ export const myExternalLibrary = {
   getJSON(url: string) {
     return this._doNetworkCall({ url: url, dataType: 'json' });
   },
+};
+
+export const getAlbumById = async (id: number) => {
+  const requestUrl = `https://jsonplaceholder.typicode.com/albums/${id}/photos?_limit=3`;
+  return new Promise((resolve, reject) => {
+    request.get(requestUrl, (err, res, body) => {
+      if (err) {
+        return reject(err);
+      }
+      resolve(JSON.parse(body));
+    });
+  });
 };
