@@ -3,37 +3,11 @@
 
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
-import sinonChai from 'sinon-chai';
-import PubSub from 'pubsub-js';
 
 import { getAlbumById } from './targets';
 import request from 'request';
 
-chai.use(sinonChai);
-
 describe('spy.mock()', () => {
-  it('should call all subscribers when exceptions', () => {
-    const myAPI = {
-      mySubscriber: () => {
-        console.log('mySubscriber is executed.');
-      },
-    };
-    const mockedMyAPI = sinon.mock(myAPI);
-    const spiedFn = sinon.spy();
-
-    mockedMyAPI.expects('mySubscriber').once();
-
-    PubSub.subscribe('message', myAPI.mySubscriber);
-    PubSub.subscribe('message', spiedFn);
-    PubSub.publishSync('message', undefined);
-
-    mockedMyAPI.verify();
-
-    expect(spiedFn.calledOnce).to.be.true;
-
-    mockedMyAPI.restore();
-  });
-
   it('should getPhotosByAlbumId', (done) => {
     const mockedRequest = sinon.mock(request);
 
